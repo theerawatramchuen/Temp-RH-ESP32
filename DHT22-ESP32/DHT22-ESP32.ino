@@ -1,5 +1,11 @@
 /*********
 Temp and RH Web Server and Line Notify by Theerawat
+Link Prototype :
+  ESPAsyncWebserver
+  https://randomnerdtutorials.com/esp32-dht11-dht22-temperature-humidity-web-server-arduino-ide/
+  https://github.com/me-no-dev/ESPAsyncWebServer
+  
+  
 version 0.1 Initital  20-Feb-2021
 *********/
 
@@ -13,8 +19,8 @@ version 0.1 Initital  20-Feb-2021
 //const char* ssid = "LAB";
 //const char* password = "12345678";
 
-const char* ssid = "ramchuen";
-const char* password = "05948512";
+const char* ssid = "ramchuen1";
+const char* password = "0817342907";
 
 
 #define DHTPIN 27     // Digital pin connected to the DHT sensor
@@ -27,8 +33,8 @@ String txt1 = "Temp-RH";
 int waterlvl = 0; 
 
 // Uncomment the type of sensor in use:
-//#define DHTTYPE    DHT11     // DHT 11
-#define DHTTYPE    DHT22     // DHT 22 (AM2302)
+#define DHTTYPE    DHT11     // DHT 11
+//#define DHTTYPE    DHT22     // DHT 22 (AM2302)
 //#define DHTTYPE    DHT21     // DHT 21 (AM2301)
 
 DHT dht(DHTPIN, DHTTYPE);
@@ -113,7 +119,7 @@ setInterval(function ( ) {
   };
   xhttp.open("GET", "/temperature", true);
   xhttp.send();
-}, 10000 ) ;
+}, 20000 ) ;
 
 setInterval(function ( ) {
   var xhttp = new XMLHttpRequest();
@@ -124,7 +130,7 @@ setInterval(function ( ) {
   };
   xhttp.open("GET", "/humidity", true);
   xhttp.send();
-}, 10000 ) ;
+}, 20000 ) ;
 </script>
 </html>)rawliteral";
 
@@ -194,7 +200,7 @@ void loop(){
     digitalWrite(FILLIN, LOW);
     digitalWrite(MIST, HIGH);
   }
-  delay(10000);
+  delay(30000);
   digitalWrite(FILLIN, HIGH);
   digitalWrite(MIST, HIGH);
 }
